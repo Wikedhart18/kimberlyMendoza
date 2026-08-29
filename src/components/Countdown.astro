@@ -1,0 +1,60 @@
+---
+---
+
+<div
+  class="container-page relative z-30 -mt-[56px] mb-[-56px]"
+  data-countdown
+  data-target="2026-10-01T00:00:00"
+>
+  <div
+    class="mx-auto flex h-[96px] w-full items-center rounded-[20px] bg-cover bg-center px-4 sm:h-[112px] sm:rounded-[24px] sm:px-12"
+    style="background-image: url('/images/bg-countdown.webp')"
+  >
+    <div class="grid w-full grid-cols-4 gap-2 sm:gap-4">
+      <div>
+        <p class="countdown-number" data-days>00</p>
+        <p class="countdown-label">Días</p>
+      </div>
+      <div>
+        <p class="countdown-number" data-hours>00</p>
+        <p class="countdown-label">Horas</p>
+      </div>
+      <div>
+        <p class="countdown-number" data-minutes>00</p>
+        <p class="countdown-label">Minutos</p>
+      </div>
+      <div>
+        <p class="countdown-number" data-seconds>00</p>
+        <p class="countdown-label">Segundos</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const root = document.querySelector('[data-countdown]');
+  if (root) {
+    const target = new Date(root.getAttribute('data-target') || '2026-10-01T00:00:00').getTime();
+    const daysEl = root.querySelector('[data-days]');
+    const hoursEl = root.querySelector('[data-hours]');
+    const minutesEl = root.querySelector('[data-minutes]');
+    const secondsEl = root.querySelector('[data-seconds]');
+
+    const pad = (n) => String(Math.max(0, n)).padStart(2, '0');
+
+    const tick = () => {
+      const diff = Math.max(0, target - Date.now());
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      if (daysEl) daysEl.textContent = pad(days);
+      if (hoursEl) hoursEl.textContent = pad(hours);
+      if (minutesEl) minutesEl.textContent = pad(minutes);
+      if (secondsEl) secondsEl.textContent = pad(seconds);
+    };
+
+    tick();
+    setInterval(tick, 1000);
+  }
+</script>

@@ -1,0 +1,73 @@
+---
+const points = [
+  {
+    highlight: 'Desarrolla tu liderazgo,',
+    rest: ' inspírate con los mentores expertos y aprende a liderar con autenticidad.',
+  },
+  {
+    highlight: 'Sumérgete en un ambiente de crecimiento desafiante,',
+    rest: ' donde pondrás a prueba tus habilidades de comunicación, finanzas, innovación, gestión del tiempo y más.',
+  },
+  {
+    highlight: 'Accede a recursos exclusivos y eventos',
+    rest: ' en vivo sobre las últimas tendencias.',
+  },
+  {
+    highlight: 'Estarás respaldado por una comunidad',
+    rest: ' que comparte tu visión.',
+  },
+];
+---
+
+<section class="relative overflow-hidden">
+  <img
+    src="/images/john-maxwell.webp"
+    alt=""
+    width="1125"
+    height="542"
+    class="absolute inset-0 hidden h-full w-full object-cover object-left lg:block"
+    loading="lazy"
+    aria-hidden="true"
+  />
+
+  <div class="relative z-10 grid min-h-0 lg:min-h-[520px] lg:grid-cols-2">
+    <div class="relative min-h-[220px] sm:min-h-[280px] lg:min-h-0">
+      <img
+        src="/images/john-maxwell.webp"
+        alt="John C. Maxwell"
+        width="1125"
+        height="542"
+        class="absolute inset-0 h-full w-full object-cover object-[20%_center] lg:hidden"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="flex flex-col justify-center bg-[#1a1640] px-6 py-10 sm:px-10 sm:py-12 lg:bg-transparent lg:px-14 lg:py-16">
+      <div class="mx-auto flex max-w-lg flex-col items-center text-center lg:mx-0 lg:items-start lg:text-left">
+        <h2 class="section-title text-[22px] font-extrabold text-white sm:text-3xl">
+          ¡Descubre lo que Maxwell<br />
+          Growth App{' '}
+          <span class="title-underline title-underline--discover">tiene para ti</span>!
+        </h2>
+
+        <ul class="mt-6 w-full space-y-3 text-left sm:mt-8 sm:space-y-4">
+          {
+            points.map((point) => (
+              <li class="flex gap-3 text-sm leading-snug sm:text-base sm:leading-none">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-hero-pill"></span>
+                <span class="text-hero-pill">
+                  <span class="font-bold">{point.highlight}</span>
+                  {point.rest}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <a href="#registro" class="btn-primary btn-primary--discover mt-8">
+          Regístrate ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,93 @@
+---
+const items = [
+  'Quieres estar a la vanguardia y aprender sobre los temas en tendencia del mercado corporativo global.',
+  'Sueñas con convertirte en un líder inspirador.',
+  'Buscas un crecimiento personal y profesional sin límites.',
+  'Deseas potenciar tus habilidades de liderazgo y para los negocios.',
+  'Eres emprendedor, empresario o gerente y quieres impulsar a tu equipo.',
+  'Anhelas ser parte de una comunidad vibrante de líderes que se apoyan mutuamente.',
+];
+---
+
+<section class="relative overflow-hidden bg-form-bg pb-12 pt-12 sm:pb-20 sm:pt-20">
+  <img
+    src="/images/deco-a.webp"
+    alt=""
+    width="1125"
+    height="995"
+    class="pointer-events-none absolute top-0 left-0 h-[110%] w-auto min-w-[85%] max-w-[min(100vw,1150px)] object-contain object-left-top opacity-30 sm:h-[130%] sm:min-w-[70%] sm:max-w-[min(95vw,1150px)] sm:opacity-40"
+    aria-hidden="true"
+    loading="lazy"
+  />
+
+  <div class="container-page relative z-10">
+    <div class="grid items-center gap-10 pb-10 lg:grid-cols-2 lg:gap-12 lg:pb-16">
+      <div class="order-2 mx-auto w-full max-w-md lg:order-1 lg:max-w-none">
+        <img
+          src="/images/phones-categories.webp"
+          alt="Biblioteca de cursos de la app"
+          width="288"
+          height="421"
+          class="mx-auto h-auto w-full max-w-[200px] drop-shadow-xl sm:max-w-[240px] lg:max-w-[260px]"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="order-1 text-center lg:order-2 lg:text-left">
+        <h2 class="section-title text-[22px] font-extrabold text-brand-800 sm:text-3xl lg:text-4xl">
+          Esta App es para ti, si...
+        </h2>
+
+        <ul class="mt-6 space-y-3 text-left sm:mt-8 sm:space-y-4">
+          {
+            items.map((item) => (
+              <li class="flex gap-3">
+                <img
+                  src="/images/check-circle.webp"
+                  alt=""
+                  width="30"
+                  height="30"
+                  class="mt-0.5 h-5 w-5 shrink-0 sm:h-7 sm:w-7"
+                  loading="lazy"
+                />
+                <p class="text-sm leading-snug text-ink-muted sm:text-base sm:leading-none">{item}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="overflow-hidden rounded-[1.5rem] bg-cover bg-left bg-no-repeat px-5 py-8 sm:rounded-[2.5rem] sm:px-10 sm:py-12 lg:px-14"
+      style="background-image: url('/images/bg-discover.webp')"
+    >
+      <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-8">
+        <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <h2 class="section-title text-[22px] font-extrabold text-white sm:text-3xl lg:text-4xl">
+            ¡Obtén certificados y<br />
+            compártelos en tus<br />
+            <span class="title-underline title-underline--certificates">redes sociales!</span>
+          </h2>
+          <p class="mt-4 text-sm leading-none text-hero-pill sm:text-base">
+            Impulsa tu carrera profesional
+          </p>
+          <a href="#registro" class="btn-primary btn-primary--discover mt-6 sm:mt-8">
+            Regístrate ahora
+          </a>
+        </div>
+
+        <div class="mx-auto w-full max-w-[280px] sm:max-w-md lg:max-w-none">
+          <img
+            src="/images/certificate-mockup.webp"
+            alt="Certificado digital Maxwell Growth App"
+            width="380"
+            height="282"
+            class="mx-auto h-auto w-full drop-shadow-2xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

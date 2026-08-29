@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/DegularTextDemo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/DegularTextDemo-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/DegularTextDemo-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/DegularTextDemo-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular";
+  src: url("/fonts/DegularTextDemo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular Display";
+  src: url("/fonts/DegularDisplayDemo-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular Display";
+  src: url("/fonts/DegularDisplayDemo-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular Display";
+  src: url("/fonts/DegularDisplayDemo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular Display";
+  src: url("/fonts/DegularDisplayDemo-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-50: #f5f0fa;
+  --color-brand-100: #ebe0f5;
+  --color-brand-200: #d4bce8;
+  --color-brand-300: #b894d9;
+  --color-brand-400: #9a6bc7;
+  --color-brand-500: #7c4aaf;
+  --color-brand-600: #6b3fa0;
+  --color-brand-700: #5b2c91;
+  --color-brand-800: #4a2475;
+  --color-brand-900: #3a1c5c;
+  --color-brand-950: #241038;
+  --color-hero: #5c398e;
+  --color-hero-pill: #a289bf;
+  --color-logo: #1a1a3a;
+  --color-ink: #181918;
+  --color-ink-muted: #4a4a4a;
+  --color-form-title: #2d2254;
+  --color-form-bg: #f6f5f5;
+  --font-sans: "Degular", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Degular Display", "Degular", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1100px] px-6 sm:px-10 lg:px-16;
+  }
+
+  .inset-container-left {
+    padding-left: max(1.5rem, calc((100vw - 1100px) / 2 + 1.5rem));
+  }
+
+  @media (width >= 40rem) {
+    .inset-container-left {
+      padding-left: max(2.5rem, calc((100vw - 1100px) / 2 + 2.5rem));
+    }
+  }
+
+  @media (width >= 64rem) {
+    .inset-container-left {
+      padding-left: max(4rem, calc((100vw - 1100px) / 2 + 4rem));
+    }
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-700 px-7 py-3 text-[15px] font-semibold leading-none tracking-[-0.01em] text-white transition hover:bg-brand-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700;
+  }
+
+  .field {
+    @apply w-full rounded-none border-0 border-b border-ink bg-transparent px-0 py-2 text-[14px] leading-none text-ink placeholder:text-ink outline-none transition focus:border-ink focus:ring-0;
+  }
+
+  .hero-headline {
+    @apply font-display text-[40px] font-bold leading-[0.94] tracking-[-0.04em] text-hero sm:text-[48px] lg:text-[54px];
+  }
+
+  .section-title {
+    @apply leading-none tracking-[-0.04em];
+  }
+
+  .hero-pill {
+    @apply font-display inline-block rounded-full bg-hero-pill px-4 py-[6px] font-bold leading-none tracking-[-0.02em] text-white sm:px-6 sm:py-[8px];
+  }
+
+  .countdown-number {
+    background: linear-gradient(90deg, #f6f5f5 0%, #a289bf 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply text-center text-[32px] font-bold tabular-nums leading-none sm:text-[44px] lg:text-[60px];
+  }
+
+  .countdown-label {
+    @apply mt-0.5 text-center text-[11px] font-normal leading-none text-hero-pill sm:text-[14px] lg:text-[16px];
+  }
+
+  .title-underline {
+    @apply relative inline-block whitespace-nowrap bg-no-repeat;
+    background-position: left bottom;
+  }
+
+  .title-underline--register {
+    background-image: url('/images/vector-4.webp');
+    background-size: 100% 6px;
+    padding-bottom: 8px;
+  }
+
+  .title-underline--value {
+    background-image: url('/images/vector-3.webp');
+    background-size: 100% 10px;
+    padding-bottom: 12px;
+  }
+
+  .title-underline--discover {
+    background-image: url('/images/vector-5.webp');
+    background-size: 100% 8px;
+    padding-bottom: 10px;
+  }
+
+  .title-underline--learning {
+    background-image: url('/images/vector-6.webp');
+    background-size: 100% 7px;
+    padding-bottom: 8px;
+  }
+
+  .title-underline--certificates {
+    background-image: url('/images/vector-7.webp');
+    background-size: 100% 5px;
+    padding-bottom: 8px;
+  }
+
+  .btn-primary--discover {
+    @apply bg-hero px-8 py-3.5 text-base hover:bg-[#4d2f77];
+  }
+
+  /* Pills escalonadas — posiciones fijas según diseño (38px alto) */
+  .learning-pills-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .learning-pills {
+    position: relative;
+    width: 308px;
+    height: 164px;
+    flex-shrink: 0;
+    transform-origin: top center;
+  }
+
+  @media (width < 40rem) {
+    .learning-pills {
+      transform: scale(0.82);
+      margin-bottom: -30px;
+    }
+  }
+
+  .learning-pills__item {
+    position: absolute;
+    height: 38px;
+    width: auto;
+  }
+
+  .learning-pills__item--videocursos {
+    left: 0;
+    top: 0;
+  }
+
+  .learning-pills__item--audiocursos {
+    left: 127px;
+    top: 0;
+  }
+
+  .learning-pills__item--recursos {
+    left: 48px;
+    top: 42px;
+  }
+
+  .learning-pills__item--entrevistas {
+    left: 180px;
+    top: 84px;
+  }
+
+  .learning-pills__item--certificados {
+    left: 0;
+    top: 126px;
+  }
+}

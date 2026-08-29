@@ -1,0 +1,50 @@
+---
+const cards = [
+  {
+    icon: '/images/icon-sprout.webp',
+    alt: 'Crecimiento',
+    text: 'Creamos esta app para que puedas aprender y crecer mientras realizas las actividades diarias de la vida adulta.',
+  },
+  {
+    icon: '/images/icon-smile.webp',
+    alt: 'Microlearning divertido',
+    text: 'Utilizamos conceptos de microlearning para que aprender no sea algo aburrido, sino una experiencia divertida.',
+  },
+  {
+    icon: '/images/icon-badge.webp',
+    alt: 'Mentores expertos',
+    text: 'Nos hemos unido a un grupo de mentores expertos en las áreas más importantes de la vida adulta.',
+  },
+];
+---
+
+<section
+  class="relative overflow-hidden bg-cover bg-no-repeat pb-12 pt-20 sm:pb-20 sm:pt-28"
+  style="background-image: url('/images/bg-value.webp'); background-position: top center;"
+>
+  <div class="container-page relative z-10">
+    <h2 class="section-title mx-auto max-w-3xl text-center text-[22px] font-bold text-white sm:text-3xl lg:text-4xl">
+      Creada por Maxwell Leadership para<br />
+      que tu crecimiento{' '}
+      <span class="title-underline title-underline--value">sea exponencial</span>
+    </h2>
+
+    <div class="mt-10 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-3">
+      {
+        cards.map((card) => (
+          <article class="rounded-2xl border border-white/40 bg-white/15 px-5 py-6 text-center backdrop-blur-sm sm:rounded-3xl sm:px-6 sm:py-8">
+            <img
+              src={card.icon}
+              alt={card.alt}
+              width="40"
+              height="40"
+              class="mx-auto h-9 w-9 object-contain brightness-0 invert sm:h-10 sm:w-10"
+              loading="lazy"
+            />
+            <p class="mt-4 text-sm leading-snug text-white sm:mt-5 sm:text-base sm:leading-none">{card.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

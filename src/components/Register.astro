@@ -1,0 +1,80 @@
+---
+const countries = [
+  'México',
+  'Colombia',
+  'España',
+  'Argentina',
+  'Chile',
+  'Perú',
+  'Estados Unidos',
+  'Otro',
+];
+---
+
+<section id="registro" class="relative bg-white pb-20 pt-12 sm:pb-28 sm:pt-20">
+  <div class="container-page grid items-start gap-10 lg:grid-cols-[minmax(0,400px)_minmax(0,1fr)] lg:gap-14">
+    <div class="mx-auto w-full max-w-[400px] rounded-2xl bg-form-bg p-4 sm:mx-0 sm:p-5">
+      <h2 class="section-title text-center text-[18px] font-bold text-form-title">
+        Regístrate y obtén <strong>20% de</strong><br />
+        descuento en la suscripción<br />
+        <strong>premium anual</strong>
+      </h2>
+
+      <form class="mt-4 space-y-1" method="POST" action="#" data-register-form>
+        <label class="sr-only" for="nombre">Nombre</label>
+        <input class="field" id="nombre" name="nombre" type="text" placeholder="Nombre*" required />
+
+        <label class="sr-only" for="apellido">Apellido</label>
+        <input class="field" id="apellido" name="apellido" type="text" placeholder="Apellido*" required />
+
+        <label class="sr-only" for="email">Correo electrónico</label>
+        <input class="field" id="email" name="email" type="email" placeholder="E-mail*" required />
+
+        <label class="sr-only" for="telefono">Teléfono</label>
+        <input class="field" id="telefono" name="telefono" type="tel" placeholder="Teléfono*" required />
+
+        <label class="sr-only" for="pais">País</label>
+        <select class="field appearance-none" id="pais" name="pais" required>
+          <option value="" disabled selected>País*</option>
+          {countries.map((c) => <option value={c}>{c}</option>)}
+        </select>
+
+        <button type="submit" class="btn-primary mt-3 w-full">
+          Registrarme
+        </button>
+        <p class="hidden text-center text-sm text-brand-700" data-form-success>
+          ¡Gracias! Te contactaremos pronto.
+        </p>
+      </form>
+    </div>
+
+    <div class="text-center lg:pt-4 lg:text-left">
+      <h2 class="section-title font-display text-[22px] font-bold text-brand-800 sm:text-[32px] lg:text-[36px]">
+        ¿No te pasa que a veces la vida<br class="hidden sm:inline" />
+        {' '}adulta se siente{' '}
+        <span class="title-underline title-underline--register">bastante pesada?</span>
+      </h2>
+
+      <div class="mt-6 space-y-4 text-[15px] font-normal leading-snug text-ink sm:text-[16px] sm:leading-none">
+        <p>
+          Como dice John Maxwell, <strong>la distancia que hay entre donde estás y donde quieres estar es el crecimiento personal.</strong>{' '}
+          Imagina tener en tu celular la posibilidad de aprender “on the go” de los mejores mentores en áreas como finanzas, relaciones, salud mental y emocional, actitud, liderazgo, innovación y más.
+        </p>
+        <p>
+          Lo sabemos, ya la quieres tener en tus manos (nosotros también).{' '}
+          <strong>Maxwell Growth App, disponible Octubre 2026.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector('[data-register-form]');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const success = document.querySelector('[data-form-success]');
+    if (success) success.classList.remove('hidden');
+    if (form instanceof HTMLFormElement) form.reset();
+  });
+</script>
