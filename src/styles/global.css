@@ -217,13 +217,21 @@ body {
     width: 405px;
     height: 218px;
     flex-shrink: 0;
-    transform-origin: top center;
+    transform-origin: top left;
   }
 
   @media (width < 40rem) {
+    .learning-pills-wrap {
+      width: calc(405px * 0.82);
+      max-width: 100%;
+      height: calc(218px * 0.82);
+      margin-inline: auto;
+      overflow: hidden;
+    }
+
     .learning-pills {
       transform: scale(0.82);
-      margin-bottom: -40px;
+      margin-bottom: 0;
     }
   }
 
