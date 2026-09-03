@@ -142,7 +142,7 @@ body {
   }
 
   .hero-headline {
-    @apply font-display text-[40px] font-bold leading-[0.94] tracking-[-0.04em] text-hero sm:text-[48px] lg:text-[54px];
+    @apply font-display text-[48px] font-bold leading-[0.94] tracking-[-0.045em] text-hero sm:text-[58px] lg:text-[70px];
   }
 
   .section-title {
@@ -150,7 +150,7 @@ body {
   }
 
   .hero-pill {
-    @apply font-display inline-block rounded-full bg-hero-pill px-4 py-[6px] font-bold leading-none tracking-[-0.02em] text-white sm:px-6 sm:py-[8px];
+    @apply font-display inline-block rounded-full bg-hero-pill px-4 py-[6px] font-bold leading-none tracking-[-0.02em] text-white sm:px-5 sm:py-[7px] lg:px-6 lg:py-[8px];
   }
 
   .countdown-number {
@@ -204,7 +204,7 @@ body {
     @apply bg-hero px-8 py-3.5 text-base hover:bg-[#4d2f77];
   }
 
-  /* Pills escalonadas — posiciones fijas según diseño (38px alto) */
+  /* Pills escalonadas — posiciones fijas según diseño (50px alto) */
   .learning-pills-wrap {
     display: flex;
     width: 100%;
@@ -214,8 +214,8 @@ body {
 
   .learning-pills {
     position: relative;
-    width: 308px;
-    height: 164px;
+    width: 405px;
+    height: 218px;
     flex-shrink: 0;
     transform-origin: top center;
   }
@@ -223,13 +223,13 @@ body {
   @media (width < 40rem) {
     .learning-pills {
       transform: scale(0.82);
-      margin-bottom: -30px;
+      margin-bottom: -40px;
     }
   }
 
   .learning-pills__item {
     position: absolute;
-    height: 38px;
+    height: 50px;
     width: auto;
   }
 
@@ -239,22 +239,22 @@ body {
   }
 
   .learning-pills__item--audiocursos {
-    left: 127px;
+    left: 167px;
     top: 0;
   }
 
   .learning-pills__item--recursos {
-    left: 48px;
-    top: 42px;
+    left: 63px;
+    top: 56px;
   }
 
   .learning-pills__item--entrevistas {
-    left: 180px;
-    top: 84px;
+    left: 237px;
+    top: 112px;
   }
 
   .learning-pills__item--certificados {
     left: 0;
-    top: 126px;
+    top: 168px;
   }
 }

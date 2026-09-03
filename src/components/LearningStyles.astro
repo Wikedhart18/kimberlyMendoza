@@ -36,7 +36,7 @@ const pills = [
 <section class="relative overflow-hidden bg-white">
   <div class="relative z-10 grid items-stretch lg:grid-cols-2">
     <div class="learning-copy flex flex-col items-center justify-center px-6 py-12 pr-8 sm:px-10 sm:py-16 sm:pr-12 lg:items-start lg:py-16 lg:pr-12 lg:pl-[max(4rem,calc((100vw-1100px)/2+4rem))]">
-      <div class="flex w-full max-w-[340px] flex-col items-center sm:max-w-[400px] lg:w-fit lg:max-w-none lg:items-center">
+      <div class="flex w-full max-w-[420px] flex-col items-center sm:max-w-[460px] lg:w-fit lg:max-w-none lg:items-center">
         <h2 class="section-title text-center text-[22px] font-extrabold text-brand-700 sm:text-3xl lg:w-max lg:text-left lg:text-4xl lg:whitespace-nowrap">
           Para todos los estilos de{' '}
           <span class="title-underline title-underline--learning">aprendizaje</span>
@@ -50,7 +50,7 @@ const pills = [
                   src={pill.src}
                   alt={pill.alt}
                   width={pill.w}
-                  height="38"
+                  height="50"
                   class={`learning-pills__item ${pill.class}`}
                   loading="lazy"
                 />
@@ -61,13 +61,13 @@ const pills = [
       </div>
     </div>
 
-    <div class="relative min-h-[220px] overflow-hidden px-0 sm:min-h-[280px] lg:min-h-[520px]">
+    <div class="relative min-h-[240px] overflow-hidden px-0 sm:min-h-[300px] lg:min-h-[520px]">
       <img
         src="/images/phones-stack.webp"
         alt="Estilos de aprendizaje en la app"
         width="528"
         height="429"
-        class="absolute inset-0 h-full w-full object-contain object-center drop-shadow-xl lg:inset-y-0 lg:right-0 lg:left-auto lg:w-[min(68vw,720px)] lg:object-right"
+        class="absolute inset-y-0 right-0 h-full w-[115%] max-w-none object-contain object-right drop-shadow-xl sm:w-[110%] lg:w-[min(68vw,720px)]"
         loading="lazy"
       />
     </div>
