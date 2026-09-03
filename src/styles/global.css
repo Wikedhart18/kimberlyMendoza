@@ -216,29 +216,15 @@ body {
     position: relative;
     width: 405px;
     height: 218px;
+    max-width: 100%;
     flex-shrink: 0;
-    transform-origin: top left;
-  }
-
-  @media (width < 40rem) {
-    .learning-pills-wrap {
-      width: calc(405px * 0.82);
-      max-width: 100%;
-      height: calc(218px * 0.82);
-      margin-inline: auto;
-      overflow: hidden;
-    }
-
-    .learning-pills {
-      transform: scale(0.82);
-      margin-bottom: 0;
-    }
   }
 
   .learning-pills__item {
     position: absolute;
     height: 50px;
     width: auto;
+    max-width: none;
   }
 
   .learning-pills__item--videocursos {
@@ -264,5 +250,42 @@ body {
   .learning-pills__item--certificados {
     left: 0;
     top: 168px;
+  }
+
+  /* Mobile: tamaño reducido nativo (sin scale/overflow que recorta) */
+  @media (width < 40rem) {
+    .learning-pills {
+      width: 316px;
+      height: 172px;
+    }
+
+    .learning-pills__item {
+      height: 40px;
+    }
+
+    .learning-pills__item--videocursos {
+      left: 0;
+      top: 0;
+    }
+
+    .learning-pills__item--audiocursos {
+      left: 130px;
+      top: 0;
+    }
+
+    .learning-pills__item--recursos {
+      left: 49px;
+      top: 44px;
+    }
+
+    .learning-pills__item--entrevistas {
+      left: 185px;
+      top: 87px;
+    }
+
+    .learning-pills__item--certificados {
+      left: 0;
+      top: 131px;
+    }
   }
 }
